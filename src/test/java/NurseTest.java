@@ -8,15 +8,15 @@ import java.util.Collection;
 import org.junit.Test;
 
 public class NurseTest {
-	
-	Nurse underTest = new Nurse("Alan");
-	
+
+	Nurse underTest = new Nurse("1","Alan");
+
 	@Test
 	public void shouldHaveAName() {
 		String checkName = underTest.getName();
 		assertThat(checkName, is("Alan"));
 	}
-	
+
 	@Test
 	public void shouldBeAbleToAssignAPatientToNurseWorkload() {
 		Patient patient1 = new Patient();
@@ -24,7 +24,7 @@ public class NurseTest {
 		Collection<Patient> nursesPatients = underTest.getPatients();
 		assertThat(nursesPatients, contains(patient1));
 	}
-	
+
 	@Test
 	public void statusShouldReportAsAvailableWith2Patients() {
 		Patient patient1 = new Patient();
@@ -34,7 +34,7 @@ public class NurseTest {
 		String statusCheck = underTest.getStatus();
 		assertThat(statusCheck, is("Available"));
 	}
-	
+
 	@Test
 	public void statusShouldReportAsUnavailableWith3Patients() {
 		Patient patient1 = new Patient();
@@ -46,7 +46,7 @@ public class NurseTest {
 		String statusCheck = underTest.getStatus();
 		assertThat(statusCheck, is("Unavailable"));
 	}
-	
+
 	@Test
 	public void shouldIncreaseHealthLevelBy5WhenCareForPatiet() {
 		Patient patient = new Patient();
@@ -55,7 +55,7 @@ public class NurseTest {
 		int healthCheck = patient.getHealthLevel();
 		assertThat(healthCheck, is(10));
 	}
-	
+
 	@Test
 	public void shouldIncreaseHealthLevelFrom2To7WhenCareForPatient() {
 		Patient patient = new Patient(2);
@@ -64,12 +64,23 @@ public class NurseTest {
 		int healthCheck = patient.getHealthLevel();
 		assertThat(healthCheck, is(7));
 	}
-	
+
 	@Test
 	public void shouldBeAnInstanceOfMedicalDuties() {
 		assertThat(underTest, instanceOf(MedicalDuties.class));
 	}
-		
+	
+	@Test
+	public void shouldBeAnInstanceOfEmployee() {
+		assertThat(underTest, instanceOf(Employee.class));
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

@@ -1,19 +1,18 @@
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Doctor implements MedicalDuties {
+public class Doctor extends Employee implements MedicalDuties {
 
-	private String name;
 	private Collection<Patient> patients = new ArrayList<>();
 	private String status;
-
-	public String getName() {
-		return name;
-	}
 
 	@Override
 	public Collection<Patient> getPatients() {
 		return patients;
+	}
+	
+	public Doctor(String id, String name) {
+		super(id, name);
 	}
 
 	@Override
@@ -26,9 +25,6 @@ public class Doctor implements MedicalDuties {
 		return status;
 	}
 
-	public Doctor(String name) {
-		this.name = name;
-	}
 
 	@Override
 	public void assignPatient(Patient patient) {

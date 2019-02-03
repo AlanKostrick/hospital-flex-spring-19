@@ -1,18 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Nurse implements MedicalDuties {
+public class Nurse extends Employee implements MedicalDuties {
 
-	private String name;
 	private Collection<Patient> patients = new ArrayList<>();
 	private String status;
 
-	public String getName() {
-		return name;
-	}
-
-	public Nurse(String name) {
-		this.name = name;
+	public Nurse(String id,String name) {
+		super(id, name);
 	}
 
 	@Override

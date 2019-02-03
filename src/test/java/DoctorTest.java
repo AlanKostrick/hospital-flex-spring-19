@@ -9,11 +9,16 @@ import org.junit.Test;
 
 public class DoctorTest {
 
-	Doctor underTest = new Doctor("Alan");
+	Doctor underTest = new Doctor("1","Alan");
 
 	@Test
 	public void shouldBeInstanceOfMedicalDuties() {
 		assertThat(underTest, instanceOf(MedicalDuties.class));
+	}
+	
+	@Test
+	public void shouldBeAnInstanceOfEmployee() {
+		assertThat(underTest, instanceOf(Employee.class));
 	}
 
 	@Test
