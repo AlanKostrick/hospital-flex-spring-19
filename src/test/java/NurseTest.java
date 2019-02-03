@@ -7,6 +7,11 @@ import java.util.Collection;
 
 import org.junit.Test;
 
+import hospital.Employee;
+import hospital.MedicalDuties;
+import hospital.Patient;
+import medical.personnel.Nurse;
+
 public class NurseTest {
 
 	Nurse underTest = new Nurse("1","Alan");

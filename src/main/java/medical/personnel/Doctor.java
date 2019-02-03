@@ -1,5 +1,10 @@
+package medical.personnel;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import hospital.Employee;
+import hospital.MedicalDuties;
+import hospital.Patient;
 
 public class Doctor extends Employee implements MedicalDuties {
 
